@@ -1,9 +1,9 @@
-// This is a basic Flutter widget test.
-//
-// To perform an interaction with a widget in your test, use the WidgetTester
-// utility that Flutter provides. For example, you can send tap and scroll
-// gestures. You can also use WidgetTester to find child widgets in the widget
-// tree, read text, and verify that the values of widget properties are correct.
+// // This is a basic Flutter widget test.
+// //
+// // To perform an interaction with a widget in your test, use the WidgetTester
+// // utility that Flutter provides. For example, you can send tap and scroll
+// // gestures. You can also use WidgetTester to find child widgets in the widget
+// // tree, read text, and verify that the values of widget properties are correct.
 
 // import 'package:flutter/material.dart';
 // import 'package:flutter_test/flutter_test.dart';
@@ -193,50 +193,57 @@
 //   print(nilaiAkhir);
 // }
 
-class Kendaraan {
-  String? merk;
-  String? tipe;
-  int? kecepatan;
 
-  //constructor
-  Kendaraan({this.merk, this.tipe, this.kecepatan});
+// OOP
+// Class
 
-  //method
-  maju(int tambahKecepatan) {
-    kecepatan = kecepatan! + tambahKecepatan;
+class kendaraan {
+  String merk;
+  String nama;
+  int kcptn;
+
+  // Constructur
+  kendaraan({this.merk, this.nama, this.kcptn});
+
+  // Method
+  maju(int Tambahkecepatan ){
+    kcptn = kcptn + Tambahkecepatan;
+//     print(kcptn + Tambahkecepatan);
   }
 }
 
-//inharitance / pewarisan
-class Sedan extends Kendaraan {
-  int? jumlahPintu;
-  int? kecepatanMax;
 
-  Sedan({String? merk, this.jumlahPintu, this.kecepatanMax})
-      : super(merk: merk);
+// Inheritance / Pewarisan
+class Honda extends kendaraan {
+  int jumlahPintu;
+  int kecepatanMaks;
+
+  Honda({String merk, this.jumlahPintu, this.kecepatanMaks}):super(merk: merk);
 }
 
 void main() {
-  //instansiasi
-  var k1 = Kendaraan(merk: "BMW", tipe: "Civic", kecepatan: 50);
+  // Instansi
+  var ken1 = kendaraan(merk: "Honda", nama: "Jazz", kcptn: 30);
 
-  //  k1.maju(60);
-  k1.merk = "Toyota";
-  print(k1.merk);
-  print(k1.tipe);
-  print(k1.kecepatan);
+  ken1.merk = ("Toyota");
+//   print(ken1.maju(70));
+  print(ken1.merk);
+  print(ken1.nama);
+  print(ken1.kcptn);
 
-  var k2 = Kendaraan(merk: "Mitsubishi", tipe: "Colt", kecepatan: 80);
+  var ken2 = kendaraan(merk: "Daihatsu", nama: "Terios", kcptn: 40);
+  ken2.maju(90);
 
-  k2.maju(40);
-  print(k2.merk);
-  print(k2.tipe);
-  print(k2.kecepatan);
+  print("--------------");
+//   print(kecepatan);
+  print(ken2.merk);
+  print(ken2.nama);
+  print(ken2.kcptn);
 
-  var s1 = Sedan(jumlahPintu: 4, kecepatanMax: 120, merk: "Honda");
-  print("-----");
-  print(s1.jumlahPintu);
-  print(s1.kecepatanMax);
-  print(s1.merk);
+  var hon1 = Honda(jumlahPintu: 4, kecepatanMaks: 300, merk: "BMW");
+  print("--------------");
+  print(hon1.jumlahPintu);
+  print(hon1.kecepatanMaks);
+  print(hon1.merk);
+
 }
-
